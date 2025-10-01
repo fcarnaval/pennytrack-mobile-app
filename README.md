@@ -228,10 +228,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
-- Portfolio: [your-portfolio-url]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/yourprofile)
+**Fernando Carnaval**
+<!-- - Portfolio: [your-portfolio-url] -->
+- GitHub: [@fcarnaval](https://github.com/fcarnaval)
+- LinkedIn: [Fernando Carnaval](https://www.linkedin.com/in/fernando-carnaval-0a173a28)
 
 ## 🙏 Acknowledgments
 
