@@ -1,0 +1,20 @@
+<ion-tabs>
+    <ion-router-outlet class="back-router"></ion-router-outlet>
+    <ion-tab-bar slot="bottom" color="secondary">
+      <ion-tab-button tab="home" [routerLink]="['/tabs/home']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Início</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="transactions" [routerLink]="['/tabs/transactions']">
+        <ion-icon name="cash-outline"></ion-icon>
+        <ion-label>Transações</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="profile" [routerLink]="['/tabs/profile']">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  

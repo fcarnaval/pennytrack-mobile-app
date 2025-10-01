@@ -1,0 +1,78 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+:root {
+
+    --ion-color-primary: #164F30;
+    --ion-color-primary-rgb: 22,79,48;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #13462a;
+    --ion-color-primary-tint: #2d6145;
+
+	--ion-color-tertiary: #B0B0B0;
+	--ion-color-tertiary-rgb: 176,176,176;
+	--ion-color-tertiary-contrast: #000000;
+	--ion-color-tertiary-contrast-rgb: 0,0,0;
+	--ion-color-tertiary-shade: #9b9b9b;
+	--ion-color-tertiary-tint: #b8b8b8;
+
+    --ion-color-secondary: #181817;
+	--ion-color-secondary-rgb: 24,24,23;
+	--ion-color-secondary-contrast: #B0B0B0;
+	--ion-color-secondary-contrast-rgb: 176,176,176;
+	--ion-color-secondary-shade: #151514;
+	--ion-color-secondary-tint: #2f2f2e;
+
+    --ion-color-dark-background: #090B0D;
+	--ion-color-dark-background-rgb: 9,11,13;
+	--ion-color-dark-background-contrast: #ffffff;
+	--ion-color-dark-background-contrast-rgb: 255,255,255;
+	--ion-color-dark-background-shade: #080a0b;
+	--ion-color-dark-background-tint: #222325;
+
+    --ion-color-gold: #F5B041;
+	--ion-color-gold-rgb: 245,176,65;
+	--ion-color-gold-contrast: #000000;
+	--ion-color-gold-contrast-rgb: 0,0,0;
+	--ion-color-gold-shade: #d89b39;
+	--ion-color-gold-tint: #f6b854;
+
+    --ion-color-tabs: #181817;
+	--ion-color-tabs-rgb: 24,24,23;
+	--ion-color-tabs-contrast: #164F30;
+	--ion-color-tabs-contrast-rgb: 22,79,48;
+	--ion-color-tabs-shade: #151514;
+	--ion-color-tabs-tint: #2f2f2e;
+
+    --ion-background-color: var(--ion-color-dark-background);
+    --ion-text-color: #B0B0B0;
+
+}
+
+.ion-color-dark-background {
+	--ion-color-base: var(--ion-color-dark-background);
+	--ion-color-base-rgb: var(--ion-color-dark-background-rgb);
+	--ion-color-contrast: var(--ion-color-dark-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-dark-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-dark-background-shade);
+	--ion-color-tint: var(--ion-color-dark-background-tint);
+}
+
+.ion-color-gold {
+	--ion-color-base: var(--ion-color-gold);
+	--ion-color-base-rgb: var(--ion-color-gold-rgb);
+	--ion-color-contrast: var(--ion-color-gold-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-gold-contrast-rgb);
+	--ion-color-shade: var(--ion-color-gold-shade);
+	--ion-color-tint: var(--ion-color-gold-tint);
+}
+
+.ion-color-tabs {
+	--ion-color-base: var(--ion-color-tabs);
+	--ion-color-base-rgb: var(--ion-color-tabs-rgb);
+	--ion-color-contrast: var(--ion-color-tabs-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-tabs-contrast-rgb);
+	--ion-color-shade: var(--ion-color-tabs-shade);
+	--ion-color-tint: var(--ion-color-tabs-tint);
+}

@@ -1,0 +1,29 @@
+<app-header pageTitle="Grupos" [showAction]="true" actionIcon="add-circle-outline" (action)="openCreateGroup()"></app-header>
+  
+  <ion-content class="ion-padding" [fullscreen]="true">
+    <ion-list *ngIf="groups.length > 0">
+      <ion-item *ngFor="let g of groups">
+        <ion-label>
+          <h2>{{ g.name }}</h2>
+          <p>Cargo: {{ g.role }}</p>
+        </ion-label>
+  
+        <ion-buttons slot="end">
+          <ion-button fill="clear" color="tertiary" (click)="abrirConvite(g)">
+            <ion-icon name="person-add-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+  
+          <ion-button *ngIf="!g.default" fill="clear" (click)="setDefaultGroup(g.group_id)">
+            <ion-icon name="star-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+  
+          <ion-icon *ngIf="g.default" name="star" slot="end" color="warning"></ion-icon>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  
+    <ion-text color="medium" *ngIf="groups.length === 0">
+      <p>Você ainda não participa de nenhum grupo.</p>
+    </ion-text>
+  </ion-content>
+  

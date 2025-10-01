@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>{{ pageTitle }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="showSecondaryAction" (click)="secondaryAction.emit()">
+        <ion-icon [name]="secondaryIcon" slot="icon-only"></ion-icon>
+      </ion-button>
+
+      <ion-button *ngIf="showAction" (click)="action.emit()">
+        <ion-icon [name]="actionIcon" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

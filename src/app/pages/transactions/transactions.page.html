@@ -1,0 +1,80 @@
+<app-header
+  pageTitle="Transações"
+  [showAction]="true"
+  [showSecondaryAction]="true"
+  actionIcon="add-circle-outline"
+  secondaryIcon="funnel-outline"
+  (action)="openModal()"
+  (secondaryAction)="openFilterModal()"
+></app-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Filtros -->
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-title>Filtros</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Categoria</ion-label>
+        <ion-select [(ngModel)]="filters.category" (ionChange)="applyFilters()">
+          <ion-select-option value="">Todas</ion-select-option>
+          <ion-select-option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Extrato</ion-label>
+        <ion-select [(ngModel)]="filters.account" (ionChange)="applyFilters()">
+          <ion-select-option value="">Todos</ion-select-option>
+          <ion-select-option *ngFor="let a of accounts" [value]="a.id">{{ a.description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Responsável</ion-label>
+        <ion-select [(ngModel)]="filters.responsible" (ionChange)="applyFilters()">
+          <ion-select-option value="">Todos</ion-select-option>
+          <ion-select-option *ngFor="let r of responsibles" [value]="r.id">{{ r.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">De</ion-label>
+        <ion-input type="date" [(ngModel)]="filters.startDate" (ionChange)="applyFilters()"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Até</ion-label>
+        <ion-input type="date" [(ngModel)]="filters.endDate" (ionChange)="applyFilters()"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" fill="outline" color="medium" (click)="clearFilters()">Limpar Filtros</ion-button>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+
+  <ion-list *ngIf="!loading && transactions.length > 0">
+    <ion-item *ngFor="let transaction of transactions" color="secondary">
+        <ion-label>
+            <h2>{{ transaction.description }}</h2>
+            <p>
+            {{ transaction.effect_date | date }} -
+            <strong [ngStyle]="{ color: transaction.type === 'income' ? 'green' : 'red' }">
+                {{ transaction.amount | currency:'BRL' }}
+            </strong>
+            </p>
+        </ion-label>
+        <ion-button fill="clear" slot="end" (click)="editTransaction(transaction)">
+            <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-text *ngIf="!loading && transactions.length === 0" color="medium">
+    <p>Nenhuma transação encontrada.</p>
+  </ion-text>
+
+</ion-content>

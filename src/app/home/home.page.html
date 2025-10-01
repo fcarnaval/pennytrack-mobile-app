@@ -1,0 +1,52 @@
+<app-header pageTitle="PennyTrack"></app-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-header collapse="condense">
+        <ion-toolbar color="primary">
+        <ion-title size="large">PennyTrack</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <div class="logo">
+        <ion-img src="../../../assets/logo.png"></ion-img>
+    </div>
+
+    <ion-text color="tertiary">
+        <p class="hail">
+            Olá, {{userName}}!
+        </p>
+    </ion-text>
+
+    <ion-text>
+        <p class="instr">
+            Não há visualizações para exibir
+        </p>
+    </ion-text>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <ion-card color="secondary" button="true">
+                    <ion-card-header>
+                        <ion-icon name="add-outline" size="large" color="gold"></ion-icon>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-text color="tertiary" class="card-nav">Cadastrar transações</ion-text>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card color="secondary" button="true" href="/tabs/transactions">
+                    <ion-card-header>
+                        <ion-icon name="list-outline" size="large" color="gold"></ion-icon>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-text color="tertiary" class="card-nav">Consultar transações</ion-text>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

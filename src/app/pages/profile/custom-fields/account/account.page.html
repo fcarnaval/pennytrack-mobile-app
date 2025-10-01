@@ -1,0 +1,11 @@
+<app-header pageTitle="Contas" [showAction]="true" actionIcon="add-circle-outline" (action)="add()"></app-header>
+  
+  <ion-content class="ion-padding">
+    <ion-item *ngFor="let a of accounts">
+        <ion-label>{{ a.description }}</ion-label>
+        <ion-button fill="clear" slot="end" (click)="confirmDelete(a)">
+            <ion-icon name="trash-outline" slot="icon-only" color="danger"></ion-icon>
+        </ion-button>
+    </ion-item>
+  </ion-content>
+  

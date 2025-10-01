@@ -1,0 +1,25 @@
+<ion-item color="secondary">
+    <ion-label position="stacked">{{ label }}</ion-label>
+    <ion-input id="{{ label }}-trigger" [value]="selectedText" readonly></ion-input>
+  
+    <ion-modal #modal trigger="{{ label }}-trigger" (didDismiss)="onDidDismiss($event)">
+        <ng-template>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="modal.dismiss(null, 'cancel')">Cancelar</ion-button>
+            </ion-buttons>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss(currentValue, 'confirm')">Confirmar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+          <ion-picker>
+            <ion-picker-column [value]="currentValue" (ionChange)="onIonChange($event)">
+              <ion-picker-column-option *ngFor="let opt of options" [value]="opt.value">
+                {{ opt.text }}
+              </ion-picker-column-option>
+            </ion-picker-column>
+          </ion-picker>
+        </ng-template>
+    </ion-modal>      
+  </ion-item>
+  

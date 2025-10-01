@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>{{ isEditMode ? 'Editar Transação' : 'Nova Transação' }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="close()">Cancelar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-spinner *ngIf="loading" name="crescent" class="ion-margin-top"></ion-spinner>
+    <form *ngIf="!loading" [formGroup]="transactionForm" (ngSubmit)="submit()" class="item-spacing">
+      
+      <ion-item color="secondary">
+          <ion-label position="stacked">Tipo</ion-label>
+          <ion-select formControlName="type">
+            <ion-select-option value="expense">Saída</ion-select-option>
+            <ion-select-option value="income">Entrada</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item color="secondary">
+        <ion-label position="stacked">Data da Transação</ion-label>
+        <ion-input type="date" formControlName="transaction_date"></ion-input>
+      </ion-item>
+  
+      <ion-item color="secondary">
+        <ion-label position="stacked">Data de Efeito</ion-label>
+        <ion-input type="date" formControlName="effect_date"></ion-input>
+      </ion-item>
+  
+      <app-picker-select
+        label="categoria"
+        [control]="categoryControl"
+        [options]="categoryOptions">
+      </app-picker-select>
+  
+      <app-picker-select
+        label="extrato"
+        [control]="accountControl"
+        [options]="accountOptions">
+      </app-picker-select>
+  
+      <app-picker-select
+        label="responsável"
+        [control]="responsibleControl"
+        [options]="responsibleOptions">
+      </app-picker-select>
+  
+      <ion-item color="secondary">
+        <ion-label position="stacked">Descrição</ion-label>
+        <ion-input formControlName="description"></ion-input>
+      </ion-item>
+  
+      <ion-item color="secondary">
+        <ion-label position="stacked">Sub-extrato</ion-label>
+        <ion-input formControlName="sub_account"></ion-input>
+      </ion-item>
+  
+      <ion-item color="secondary">
+        <ion-label position="stacked">Valor</ion-label>
+        <ion-input type="number" formControlName="amount"></ion-input>
+      </ion-item>
+  
+      <ion-button expand="block" type="submit" [disabled]="transactionForm.invalid || submitting" class="ion-margin-top">
+        <ion-spinner *ngIf="submitting" slot="start" name="dots"></ion-spinner>
+        {{ isEditMode ? 'Atualizar Transação' : 'Salvar' }}
+      </ion-button>
+  
+      <ion-button
+        *ngIf="isEditMode"
+        expand="block"
+        color="danger"
+        fill="outline"
+        (click)="confirmDelete()">
+        Excluir Transação
+      </ion-button>
+    </form>
+  </ion-content>
+  

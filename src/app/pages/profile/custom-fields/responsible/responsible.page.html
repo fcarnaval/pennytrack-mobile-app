@@ -1,0 +1,11 @@
+<app-header pageTitle="Responsáveis" [showAction]="true" actionIcon="add-circle-outline" (action)="add()"></app-header>
+  
+  <ion-content class="ion-padding">
+    <ion-item *ngFor="let r of responsibles">
+        <ion-label>{{ r.name }}</ion-label>
+        <ion-button fill="clear" slot="end" (click)="confirmDelete(r)">
+            <ion-icon name="trash-outline" slot="icon-only" color="danger"></ion-icon>
+        </ion-button>
+    </ion-item>
+  </ion-content>
+  

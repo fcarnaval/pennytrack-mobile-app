@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Filtrar Transações</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Categoria</ion-label>
+    <ion-select [(ngModel)]="filters.category">
+      <ion-select-option value="">Todas</ion-select-option>
+      <ion-select-option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Extrato</ion-label>
+    <ion-select [(ngModel)]="filters.account">
+      <ion-select-option value="">Todos</ion-select-option>
+      <ion-select-option *ngFor="let a of accounts" [value]="a.id">{{ a.description }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Responsável</ion-label>
+    <ion-select [(ngModel)]="filters.responsible">
+      <ion-select-option value="">Todos</ion-select-option>
+      <ion-select-option *ngFor="let r of responsibles" [value]="r.id">{{ r.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">De</ion-label>
+    <ion-input type="date" [(ngModel)]="filters.startDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Até</ion-label>
+    <ion-input type="date" [(ngModel)]="filters.endDate"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin-top" (click)="apply()">Aplicar Filtros</ion-button>
+  <ion-button expand="block" fill="outline" color="medium" (click)="clear()">Limpar</ion-button>
+</ion-content>
